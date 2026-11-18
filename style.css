@@ -1,0 +1,28 @@
+#refresh, .btns {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #1e293b;
+    color: #ffffff;
+    border: 2px solid #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+#TICTACTOEGAME{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 315px;
+    margin: 25px auto;
+    padding: 20px;
+    background-color: #1e293b;
+    border-radius: 12px;
+}
+#heading{
+    text-align: center;
+    color: brown;
+}
+body{
+    background-color: darkslategrey;
+}
