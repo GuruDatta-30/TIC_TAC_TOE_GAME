@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE GAME</title>
+    <style>
+        #refresh,#draw, .btns {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #1e293b;
+            color: #ffffff;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #TICTACTOEGAME{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            max-width: 315px;
+            margin: 25px auto;
+            padding: 20px;
+            background-color: #1e293b;
+            border-radius: 12px;
+        }
+        #heading{
+            text-align: center;
+            color: brown;
+        }
+        body{
+            background-color: darkslategrey;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading">HI WELCOME TO THE TIC TAC TOE WORLD! </h2>
+    <div id="heading">CREATED BY BATMAN 🦇 </div>
+    <div id="TICTACTOEGAME">
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+        
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+        <button class="btns"> </button>
+    </div>
+        <button id="refresh">REFRESH</button>
+        <button id="draw">DRAW</button>
+</body>
+<script>
+    let buttons=document.querySelectorAll(".btns");
+    let turn=true;
+    for(let btn of buttons){
+        btn.addEventListener("click",()=>{
+            if(btn.innerText!==""){
+                alert("already filled ");
+                return;
+            }
+            if (turn){
+                btn.innerText="X";
+                turn=false;
+            }
+            else{
+                btn.innerText="O";
+                turn=true;
+            }
+        })
+    }
+
+    let exit=document.querySelector("#refresh");
+    exit.addEventListener("click",()=>{
+        location.reload();
+    });
+
+    let drawx=false;
+    let draw=document.querySelector("#draw");
+    draw.addEventListener("click",()=>{
+        drawx=true;
+    });
+
+
+    for (let btn of buttons){
+        btn.addEventListener("mouseover",()=>{
+            if(drawx){
+                btn.style.borderBottom = "4px solid #38bdf8";
+                btn.style.boxShadow = "0 0 12px #38bdf8";
+            }
+        });
+    }
+
+</script>
+</html>
